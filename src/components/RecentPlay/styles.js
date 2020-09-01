@@ -21,11 +21,12 @@ export default StyleSheet.create({
     title:{
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 26
+        fontSize: 26,
     },
     btnLanjut: {
         padding: 8,
         backgroundColor: '#AFD4E6',
-        borderRadius: 16
+        borderRadius: 16,
+        alignItems:'center'
     }
 })
