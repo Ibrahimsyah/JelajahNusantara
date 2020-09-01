@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
+import {Text } from 'react-native';
+import MainBackground from '../../components/MainBackground'
+import StarBadge from '../../components/StarBadge'
+import RecentPlay from '../../components/RecentPlay'
 export default () => {
   return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
+    <MainBackground>
+      <StarBadge/>
+      <RecentPlay/>
+    </MainBackground>
   );
 };
 
