@@ -1,9 +1,9 @@
 import { StyleSheet, StatusBar } from 'react-native'
 export default StyleSheet.create({
     container: {
-        height: '100%',
-        padding: 16,
-        paddingTop: StatusBar.currentHeight + 16,
+        minHeight: '100%',
+        flex:1,
+        paddingTop: StatusBar.currentHeight,
     },
     topOverlay: {
         position: 'absolute',
