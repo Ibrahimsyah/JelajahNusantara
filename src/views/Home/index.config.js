@@ -3,28 +3,44 @@ export default {
         {
             id: 1,
             nama: 'Pulau Sumatera',
+            harga: 0,
             gambar: require('../../assets/pulau/sumatera.png')
         },
         {
             id: 2,
             nama: 'Pulau Jawa',
-            gambar: require('../../assets/pulau/sumatera.png')
+            harga: 1000,
+            gambar: require('../../assets/pulau/jawa.png')
         },
         {
             id: 3,
             nama: 'Pulau Kalimantan',
-            gambar: require('../../assets/pulau/sumatera.png')
+            harga: 1000,
+            gambar: require('../../assets/pulau/kalimantan.png')
         },
         {
             id: 4,
             nama: 'Pulau Bali',
-            gambar: require('../../assets/pulau/sumatera.png')
+            harga: 1000,
+            gambar: require('../../assets/pulau/bali.png')
         },
         {
             id: 5,
             nama: 'Pulau Sulawesi',
-            gambar: require('../../assets/pulau/sumatera.png')
+            harga: 2500,
+            gambar: require('../../assets/pulau/sulawesi.png')
         },
-        
+        {
+            id: 6,
+            nama: 'Pulau Papua',
+            harga: 4000,
+            gambar: require('../../assets/pulau/papua.png')
+        },
+        {
+            id: 7,
+            nama: 'Pulau Nusa Tenggara Timur',
+            harga: 7500,
+            gambar: require('../../assets/pulau/ntt.png')
+        },
     ]
 }

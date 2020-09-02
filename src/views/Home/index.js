@@ -14,7 +14,7 @@ export default () => {
       <RecentPlay />
       <MainMenu />
       <HeadingText>KOLEKSI PULAU</HeadingText>
-      {config.pulauList.map(pulau => <Pulau key={pulau.id} nama={pulau.nama} gambar={pulau.gambar} />)}
+      {config.pulauList.map(pulau => <Pulau key={pulau.id} {...pulau} />)}
     </MainBackground>
   );
 };

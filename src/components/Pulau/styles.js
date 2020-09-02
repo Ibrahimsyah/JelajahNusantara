@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     card: {
         marginVertical: 8,
-        display:'flex',
-        flexDirection:"row",
+        display: 'flex',
+        flexDirection: "row",
         backgroundColor: '#6C9EBF',
         borderRadius: 16,
         shadowColor: "#000",
@@ -17,16 +17,31 @@ export default StyleSheet.create({
 
         elevation: 10,
     },
-    title:{
+    title: {
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 18,
     },
     btnLanjut: {
-        marginTop:8,
+        marginTop: 8,
         padding: 8,
         backgroundColor: '#AFD4E6',
         borderRadius: 16,
-        alignItems:'center'
+        alignItems: 'center'
+    },
+    pulauPriceContainer: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        padding: 8,
+        backgroundColor: '#fff',
+        borderBottomLeftRadius: 16,
+        borderTopRightRadius: 16,
+        display: 'flex',
+        flexDirection: 'row'
+    },
+    pulauPrice: {
+        color: '#F9941D',
+        fontWeight: 'bold',
     }
 })
