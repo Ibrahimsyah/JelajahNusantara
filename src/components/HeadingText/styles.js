@@ -10,13 +10,11 @@ export default StyleSheet.create({
     textLine: {
         height: 30,
         width: 5,
-        backgroundColor: '#6C9EBF',
         borderRadius: 8,
         marginRight: 8
     },
     textStyle:{
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#6C9EBF'
     }
 })  

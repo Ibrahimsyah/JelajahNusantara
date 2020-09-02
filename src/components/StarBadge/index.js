@@ -6,11 +6,9 @@ const badgeIcon = require('../../assets/icons/badge.png')
 
 export default () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.badgeCard}>
-                <Text style={styles.starCount}>Bintang : 100</Text>
-                <Image source={badgeIcon} />
-            </View>
+        <View style={styles.badgeCard}>
+            <Text style={styles.starCount}>Bintang : 100</Text>
+            <Image source={badgeIcon} />
         </View>
     )
 }
