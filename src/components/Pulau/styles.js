@@ -24,7 +24,7 @@ export default StyleSheet.create({
     },
     btnLanjut: {
         marginTop: 8,
-        padding: 8,
+        padding: 4,
         backgroundColor: '#AFD4E6',
         borderRadius: 16,
         alignItems: 'center'

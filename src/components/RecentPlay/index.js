@@ -9,7 +9,7 @@ export default () => {
                 <Text style={styles.title}>Ayuk Keliling Indonesia</Text>
                 <View>
                     <TouchableOpacity style={styles.btnLanjut}>
-                        <Text numberOfLines={2}>Lanjut Petualangan</Text>
+                        <Text numberOfLines={1} adjustsFontSizeToFit>Lanjut Petualangan</Text>
                     </TouchableOpacity>
                 </View>
             </View>

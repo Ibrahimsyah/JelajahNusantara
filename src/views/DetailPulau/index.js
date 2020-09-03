@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, Image } from 'react-native'
+import { Text, View, Image } from 'react-native'
 import MainBackground from '../../components/MainBackground'
 import TopNavigation from '../../components/TopNavigation'
 import HeadingText from '../../components/HeadingText'
+import FABSearch from '../../components/FABSearch'
 import styles from './styles'
 import config from './index.config'
 
@@ -21,6 +22,8 @@ export default ({ route, navigation }) => {
                     <Text numberOfLines={3} style={styles.pulauName} adjustsFontSizeToFit>{pulau.nama}</Text>
                 </View>
                 <HeadingText color="#F9941D">KOLEKSI CERITA RAKYAT</HeadingText>
-            </MainBackground></>
+            </MainBackground>
+            <FABSearch onPress={() => console.log('masuk')}/>
+        </>
     )
 }

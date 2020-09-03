@@ -11,7 +11,7 @@ export default (props) => {
             <View style={{ flex: 0.4, justifyContent: 'space-around', padding: 16 }}>
                 <Text style={styles.title}>{nama}</Text>
                 <TouchableOpacity style={styles.btnLanjut} onPress={onPress}>
-                    <Text> Mulai Petualangan</Text>
+                    <Text numberOfLines={1} adjustsFontSizeToFit> Mulai Petualangan</Text>
                 </TouchableOpacity>
             </View>
             <View style={{ flex: 0.6, justifyContent: "center", alignItems: "center" }}>
