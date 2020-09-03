@@ -4,15 +4,18 @@ import MainBackground from '../../components/MainBackground'
 import TopNavigation from '../../components/TopNavigation'
 import HeadingText from '../../components/HeadingText'
 import FABSearch from '../../components/FABSearch'
+import CeritaRakyatCard from '../../components/CeritaRakyatCard'
+
 import styles from './styles'
 import config from './index.config'
+
+const thumbnailCeritaRakyat = require('../../assets/ceryat/ceryat1.png')
 
 export default ({ route, navigation }) => {
     const { idPulau } = route.params || {
         idPulau: 1
     }
     const pulau = config.pulau.find(p => p.id === idPulau)
-    console.log(pulau)
     return (
         <>
             <TopNavigation navigation={navigation} />
@@ -22,8 +25,10 @@ export default ({ route, navigation }) => {
                     <Text numberOfLines={3} style={styles.pulauName} adjustsFontSizeToFit>{pulau.nama}</Text>
                 </View>
                 <HeadingText color="#F9941D">KOLEKSI CERITA RAKYAT</HeadingText>
+                <CeritaRakyatCard thumbnail={thumbnailCeritaRakyat} title="Atu Belah Atu Bertangkup" description="Cerita Rakyat Dari Provinsi Nangroe Aceh Dasusalam" />
+                <CeritaRakyatCard thumbnail={thumbnailCeritaRakyat} title="Hikayat Putri Hijau" description="Cerita Rakyat Dari Provinsi Sumatera Utara" />
             </MainBackground>
-            <FABSearch onPress={() => console.log('masuk')}/>
+            <FABSearch onPress={() => console.log('masuk')} />
         </>
     )
 }

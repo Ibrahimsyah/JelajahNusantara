@@ -25,7 +25,7 @@ export default ({ navigation }) => {
       <MainMenu />
       <HeadingText color="#6C9EBF">KOLEKSI PULAU</HeadingText>
       {config.pulauList.map(pulau => <Pulau key={pulau.id} {...pulau} onPress={() => onPulauClick(pulau)} />)}
-    </MainBackground>
+      </MainBackground>
   );
 };
 
