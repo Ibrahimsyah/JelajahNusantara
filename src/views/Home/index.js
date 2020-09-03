@@ -17,7 +17,7 @@ export default ({ navigation }) => {
     })
   }
   return (
-    <MainBackground>
+    <MainBackground style={{paddingTop:40}}>
       <View style={styles.container}>
         <StarBadge />
       </View>

@@ -25,8 +25,15 @@ export default ({ route, navigation }) => {
                     <Text numberOfLines={3} style={styles.pulauName} adjustsFontSizeToFit>{pulau.nama}</Text>
                 </View>
                 <HeadingText color="#F9941D">KOLEKSI CERITA RAKYAT</HeadingText>
-                <CeritaRakyatCard thumbnail={thumbnailCeritaRakyat} title="Atu Belah Atu Bertangkup" description="Cerita Rakyat Dari Provinsi Nangroe Aceh Dasusalam" />
-                <CeritaRakyatCard thumbnail={thumbnailCeritaRakyat} title="Hikayat Putri Hijau" description="Cerita Rakyat Dari Provinsi Sumatera Utara" />
+                <CeritaRakyatCard
+                    thumbnail={thumbnailCeritaRakyat}
+                    title="Atu Belah Atu Bertangkup"
+                    description="Cerita Rakyat Dari Provinsi Nangroe Aceh Dasusalam" 
+                    onPress={() => navigation.navigate('aturan-main')}/>
+                <CeritaRakyatCard
+                    thumbnail={thumbnailCeritaRakyat}
+                    title="Hikayat Putri Hijau"
+                    description="Cerita Rakyat Dari Provinsi Sumatera Utara" />
             </MainBackground>
             <FABSearch onPress={() => console.log('masuk')} />
         </>

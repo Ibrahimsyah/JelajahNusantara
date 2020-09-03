@@ -3,7 +3,7 @@ export default StyleSheet.create({
     container: {
         minHeight: '100%',
         flex:1,
-        paddingTop: StatusBar.currentHeight,
+        paddingTop: StatusBar.currentHeight + 50,
     },
     topOverlay: {
         position: 'absolute',
