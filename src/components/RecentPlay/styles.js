@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     card: {
         marginTop: 16,
-        display:'flex',
-        flexDirection:"row",
+        display: 'flex',
+        flexDirection: "row",
         padding: 16,
         backgroundColor: '#6C9EBF',
         borderRadius: 16,
@@ -18,15 +18,22 @@ export default StyleSheet.create({
 
         elevation: 10,
     },
-    title:{
+    leftContainer: {
+        flex: 0.6, justifyContent: 'space-around'
+    },
+    owlIcon: {
+        width: '100%',
+        resizeMode: 'contain'
+    },
+    title: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 26,
+        fontSize: 24,
     },
     btnLanjut: {
-        padding: 8,
+        padding: 4,
         backgroundColor: '#AFD4E6',
         borderRadius: 16,
-        alignItems:'center'
+        alignItems: 'center'
     }
 })

@@ -9,10 +9,12 @@ import Pulau from '../../components/Pulau'
 import styles from './styles'
 import config from './index.config'
 
-export default () => {
+export default ({ navigation }) => {
 
   const onPulauClick = (pulau) => {
-    console.log(pulau)
+    navigation.navigate('detail-pulau', {
+      idPulau: pulau.id
+    })
   }
   return (
     <MainBackground>

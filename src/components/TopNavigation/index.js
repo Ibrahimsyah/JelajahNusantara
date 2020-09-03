@@ -5,11 +5,12 @@ import styles from './styles'
 
 const BackIcon = require('../../assets/icons/icon_back.png')
 
-export default ({refs}) => {
+export default ({ refs, navigation }) => {
     return (
         <View style={styles.container} ref={refs}>
-            <TouchableOpacity>
-                <Image source={BackIcon}/>
+            <TouchableOpacity onPress={() => navigation.goBack()}
+                style={{ zIndex: 99 }}>
+                <Image source={BackIcon} />
             </TouchableOpacity>
             <StarBadge />
         </View>

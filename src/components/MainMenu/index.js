@@ -11,7 +11,7 @@ const Card = props => {
     return (
         <View style={styles.card}>
             <Image source={props.image} style={styles.menuLogo}/>
-            <Text>{props.title}</Text>
+            <Text style={styles.menuTitle} adjustsFontSizeToFit numberOfLines={1}>{props.title}</Text>
         </View>
     )
 }

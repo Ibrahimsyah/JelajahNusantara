@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     card: {
         flex: 0.20,
-        display:'flex',
-        alignItems:'center',
+        display: 'flex',
+        alignItems: 'center',
         padding: 8,
         backgroundColor: '#fff',
         borderRadius: 8,
@@ -23,10 +23,11 @@ export default StyleSheet.create({
         width: 50,
         resizeMode: 'contain'
     },
+    menuTitle: { fontSize: 12, textAlign: "center" },
     container: {
         marginTop: 16,
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'space-around'
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     }
 })

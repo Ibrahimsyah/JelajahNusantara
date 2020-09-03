@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     hero: {
+        marginTop:20,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -15,6 +16,6 @@ export default StyleSheet.create({
         flex: 0.4,
         color: '#F9941D',
         fontWeight: 'bold',
-        fontSize: 30
+        fontSize: 25,
     }
 })
