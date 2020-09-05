@@ -15,7 +15,7 @@ const PageNumber = ({ page }) => {
 }
 
 export default (props) => {
-    const { onNext, onBack, content, image, page } = props
+    const { onNext, onBack, content, image, page, hideBackButton = false, hideNextButton = false } = props
 
     return (
         <View style={{ flex: 1 }}>
@@ -25,13 +25,17 @@ export default (props) => {
                     <PageNumber page={page} />
                     <View style={styles.topContainer}>
                         <TouchableOpacity style={{ flex: 0.1 }} onPress={onBack}>
-                            <Image source={iconBack} />
+                            {!hideBackButton &&
+                                <Image source={iconBack} />
+                            }
                         </TouchableOpacity>
                         <Text style={{ flex: 0.8, textAlign: 'center' }}>
                             {content}
                         </Text>
                         <TouchableOpacity style={{ flex: 0.1 }} onPress={onNext}>
-                            <Image source={iconNext} />
+                            {!hideNextButton &&
+                                <Image source={iconNext} />
+                            }
                         </TouchableOpacity>
                     </View>
                 </View>

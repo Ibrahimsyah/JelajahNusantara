@@ -16,9 +16,9 @@ export default () => {
             <StatusBar translucent backgroundColor="transparent" />
             <Stack.Navigator headerMode="none">
                 {/* <Stack.Screen name="splash" component={Splash} /> */}
-                {/* <Stack.Screen name="home" component={Home} /> */}
-                {/* <Stack.Screen name="detail-pulau" component={DetailPulau}/> */}
-                {/* <Stack.Screen name="aturan-main" component={AturanMain}/> */}
+                <Stack.Screen name="home" component={Home} />
+                <Stack.Screen name="detail-pulau" component={DetailPulau}/>
+                <Stack.Screen name="aturan-main" component={AturanMain}/>
                 <Stack.Screen name="ruang-baca" component={RuangBaca} />
             </Stack.Navigator>
         </NavigationContainer>)

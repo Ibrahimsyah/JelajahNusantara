@@ -18,9 +18,9 @@ export default ({ navigation }) => {
             <TopNavigation navigation={navigation} useBackArrow={false} />
             <View>
                 <Carousel ref={el => _carousel = el} {...config.carousel}>
-                    <BacaanFragment onNext={onNext} onBack={onBack} page={1} content="test 0" image={imageCerita} />
+                    <BacaanFragment onNext={onNext} onBack={onBack} page={1} content="test 0" image={imageCerita} hideBackButton/>
                     <BacaanFragment onNext={onNext} onBack={onBack} page={2} content="test 1" image={imageCerita} />
-                    <BacaanFragment onNext={onNext} onBack={onBack} page={3} content="test 2" image={imageCerita} />
+                    <BacaanFragment onNext={onNext} onBack={onBack} page={3} content="test 2" image={imageCerita} hideNextButton/>
                 </Carousel>
             </View>
         </>

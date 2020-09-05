@@ -9,12 +9,14 @@ const owlBook = require('../../assets/images/owlBook.png')
 const NumberedList = ({ number, children }) => {
     return (
         <View style={styles.numberedListContainer}>
-            <Text style={{ flex: 1, textAlign: "center", fontSize:18 }}>{number}.</Text>
-            <Text style={{ flex: 11, fontSize:18 }}>{children}</Text>
+            <Text style={{ flex: 1, textAlign: "center", fontSize: 18 }}>{number}.</Text>
+            <Text style={{ flex: 11, fontSize: 18 }}>{children}</Text>
         </View>
     )
 }
 export default ({ navigation }) => {
+    const onMulaiBaca = () => navigation.navigate('ruang-baca')
+    
     return (
         <>
             <TopNavigation navigation={navigation} />
@@ -27,7 +29,7 @@ export default ({ navigation }) => {
                 <NumberedList number="2">Dapatkan bintang dengan menyelesaikan satu cerita rakyat</NumberedList>
                 <NumberedList number="3">Dapatkan bintang dengan menjawab setiap kuis yang diberikan</NumberedList>
                 <NumberedList number="4">Selalu ingat jangan membaca dalam kegelapan</NumberedList>
-                <TouchableOpacity style={styles.btnAction}>
+                <TouchableOpacity style={styles.btnAction} onPress={onMulaiBaca}>
                     <Text style={styles.btnText}>Mulai Membaca</Text>
                 </TouchableOpacity>
             </MainBackground>
