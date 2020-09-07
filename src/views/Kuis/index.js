@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import TopNavigation from '../../components/TopNavigation'
 import ScoreBadge from '../../components/ScoreBadge'
+import { connect } from 'react-redux'
 import styles from './styles'
 import config from './index.config'
 
@@ -16,7 +17,8 @@ const CardAnswer = ({ order, answer }) => {
         </TouchableOpacity >
     )
 }
-export default (props) => {
+const App = (props) => {
+    console.log(props)
     const { navigation } = props
     return (
         <>
@@ -35,3 +37,11 @@ export default (props) => {
         </>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        state: state
+    }
+}
+
+export default connect(mapStateToProps)(App)
