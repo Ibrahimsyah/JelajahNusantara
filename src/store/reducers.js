@@ -1,10 +1,8 @@
 import { ADD_SCORE, SET_ACCOUNT } from './ActionTypes'
+import account from '../providers/account'
 
 const initState = {
-    account: {
-        username: '',
-        name: ''
-    },
+    account: null,
     score: 0
 }
 
@@ -15,6 +13,7 @@ export default (state = initState, action) => {
             return { ...state, score: state.score + payload }
         }
         case SET_ACCOUNT: {
+            account.saveAccount(payload)
             return { ...state, account: payload }
         }
         default: {
