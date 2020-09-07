@@ -1,21 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, View, Image } from 'react-native'
 import MainBackground from '../../components/MainBackground'
 import TopNavigation from '../../components/TopNavigation'
 import HeadingText from '../../components/HeadingText'
 import FABSearch from '../../components/FABSearch'
 import CeritaRakyatCard from '../../components/CeritaRakyatCard'
-
+import api from '../../providers/api'
 import styles from './styles'
 import config from './index.config'
 
 const thumbnailCeritaRakyat = require('../../assets/ceryat/ceryat1.png')
 
 export default ({ route, navigation }) => {
-    const { idPulau } = route.params || {
-        idPulau: 1
+    const { idPulau } = route.params
+    const [pulau, setPulau] = useState(config.pulau.find(p => p.id === idPulau))
+    const [stories, setStories] = useState([])
+
+    const fetchDetailPulau = async (id) => {
+        const res = await api.request(`home/detail/${id}`, 'get')
+        console.log(res)
+        return res
     }
-    const pulau = config.pulau.find(p => p.id === idPulau)
+
+    useEffect(() => {
+        Promise.all([fetchDetailPulau(idPulau)]).then(res => {
+            const { detail: { trivias }, stories } = res[0]
+            setStories(stories)
+        })
+    }, [])
     return (
         <>
             <TopNavigation navigation={navigation} />
@@ -25,15 +37,14 @@ export default ({ route, navigation }) => {
                     <Text numberOfLines={3} style={styles.pulauName} adjustsFontSizeToFit>{pulau.nama}</Text>
                 </View>
                 <HeadingText color="#F9941D">KOLEKSI CERITA RAKYAT</HeadingText>
-                <CeritaRakyatCard
-                    thumbnail={thumbnailCeritaRakyat}
-                    title="Atu Belah Atu Bertangkup"
-                    description="Cerita Rakyat Dari Provinsi Nangroe Aceh Dasusalam" 
-                    onPress={() => navigation.navigate('aturan-main')}/>
-                <CeritaRakyatCard
-                    thumbnail={thumbnailCeritaRakyat}
-                    title="Hikayat Putri Hijau"
-                    description="Cerita Rakyat Dari Provinsi Sumatera Utara" />
+                {stories.map((story, idx) => (
+                    <CeritaRakyatCard
+                        key={idx}
+                        thumbnail={story.imgSrc}
+                        title={story.title}
+                        description={story.description}
+                        onPress={() => navigation.navigate('aturan-main')} />
+                ))}
             </MainBackground>
             <FABSearch onPress={() => console.log('masuk')} />
         </>

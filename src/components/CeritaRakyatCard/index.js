@@ -8,7 +8,7 @@ export default (props) => {
     const { onPress, thumbnail, title, description } = props
     return (
         <View style={styles.container}>
-            <Image source={thumbnail} style={styles.thumbnail} />
+            <Image source={{ uri: thumbnail }} style={styles.thumbnail} />
             <View style={styles.content}>
                 <View>
                     <Text style={styles.contentTitle} numberOfLines={1} adjustsFontSizeToFit>{title}</Text>

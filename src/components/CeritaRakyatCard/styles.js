@@ -21,7 +21,8 @@ export default StyleSheet.create({
     thumbnail: {
         flex: 0.4,
         height: 100,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderRadius: 16
     },
     content: {
         flex: 1,
