@@ -13,7 +13,7 @@ const thumbnailCeritaRakyat = require('../../assets/ceryat/ceryat1.png')
 
 export default ({ route, navigation }) => {
     const { idPulau } = route.params
-    const [pulau, setPulau] = useState(config.pulau.find(p => p.id === idPulau))
+    const [pulau, _] = useState(config.pulau.find(p => p.id === idPulau))
     const [stories, setStories] = useState([])
 
     const fetchDetailPulau = async (id) => {

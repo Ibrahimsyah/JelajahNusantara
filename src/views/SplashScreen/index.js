@@ -1,22 +1,30 @@
 import React, { useEffect } from 'react'
 import { View, Text, ActivityIndicator } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { setAccount } from '../../store/actions'
-import storage from '../../providers/account'
+import { setAccount } from '../../store/account.action'
+import { setProgress } from '../../store/savegame.action'
+import account from '../../providers/account'
 import styles from './style'
+import savegame from '../../providers/savegame'
 
 export default ({ navigation }) => {
     const dispatch = useDispatch()
-    useEffect(() => {
-        // storage.deleteAccount()
-        storage.getAccount().then(res => {
-            if (res) {
-                dispatch(setAccount(res))
+
+    const init = async () => {
+        await account.deleteAccount()
+        Promise.all([account.getAccount(), savegame.getProgress()]).then(res => {
+            const [account, progress] = res
+            if (account) {
+                dispatch(setAccount(account))
+                dispatch(setProgress(progress))
                 navigation.replace('home')
-            }else{
+            } else {
                 navigation.replace('onboarding')
             }
         })
+    }
+    useEffect(() => {
+        init()
     }, [])
     return (
         <View style={styles.container}>

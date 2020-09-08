@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { TextInput, Text, Image, TouchableOpacity, KeyboardAvoidingView, View, Alert, ActivityIndicator } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { setAccount } from '../../store/actions'
+import { setAccount } from '../../store/account.action'
+import { setProgress } from '../../store/savegame.action'
 import api from '../../providers/api'
 import styles from './styles'
 import config from './index.config'
@@ -24,7 +25,7 @@ export default ({ navigation }) => {
             return
         }
         try {
-            setState(state => ({...state, loading: true}))
+            setState(state => ({ ...state, loading: true }))
             const model = {
                 fullName: state.name,
                 username: state.username
@@ -32,6 +33,10 @@ export default ({ navigation }) => {
             const res = await api.request('auth/register', 'post', model)
             account.accessToken = res.token
             dispatch(setAccount(account))
+            dispatch(setProgress({
+                ownedPulauId: [1],
+                score: 0,
+            }))
             navigation.replace('home')
         } catch (err) {
             console.log('err:', err)

@@ -4,6 +4,7 @@ const KEY = 'ACCOUNT'
 
 export default {
     deleteAccount: async () => {
+        console.log('masuk')
         await AsyncStorage.removeItem(KEY)
     },
     getAccount: async () => {

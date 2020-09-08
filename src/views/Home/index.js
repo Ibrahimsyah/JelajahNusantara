@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native'
+import { connect } from 'react-redux'
 import MainBackground from '../../components/MainBackground'
 import StarBadge from '../../components/StarBadge'
 import RecentPlay from '../../components/RecentPlay'
@@ -10,8 +11,9 @@ import api from '../../providers/api'
 import styles from './styles'
 import config from './index.config'
 
-export default ({ navigation }) => {
+const App =  ({ navigation, savegame }) => {
   const [pulau, setPulau] = useState(config.pulauList)
+  const { ownedPulauId } = savegame
   const onPulauClick = (pulau) => {
     navigation.navigate('detail-pulau', {
       idPulau: pulau.id
@@ -25,7 +27,7 @@ export default ({ navigation }) => {
   useEffect(() => {
     Promise.all([fetchPulau()]).then(res => {
       const length = res[0].length
-      setPulau(config.pulauList.slice(0,length))
+      setPulau(config.pulauList.slice(0, length))
     })
   }, [])
   return (
@@ -36,8 +38,15 @@ export default ({ navigation }) => {
       <RecentPlay />
       <MainMenu />
       <HeadingText color="#6C9EBF">KOLEKSI PULAU</HeadingText>
-      {pulau.map(pulau => <Pulau key={pulau.id} {...pulau} onPress={() => onPulauClick(pulau)} />)}
+      {pulau.map(pulau => <Pulau key={pulau.id} {...pulau} onPress={() => onPulauClick(pulau)} disabled={!ownedPulauId.includes(pulau.id)} />)}
     </MainBackground>
   );
 };
 
+const mapStateToProps = state => {
+  return ({
+    savegame: state.savegame
+  })
+}
+
+export default connect(mapStateToProps)(App)

@@ -25,7 +25,7 @@ export default StyleSheet.create({
     btnLanjut: {
         marginTop: 8,
         padding: 4,
-        backgroundColor: '#AFD4E6',
+        backgroundColor: '#fff',
         borderRadius: 16,
         alignItems: 'center'
     },
@@ -43,5 +43,13 @@ export default StyleSheet.create({
     pulauPrice: {
         color: '#F9941D',
         fontWeight: 'bold',
+    },
+    text: {
+        color: '#6C9EBF',
+        fontWeight:'bold'
+    },
+    textDisabled: {
+        color: '#c9c9c9',
+        fontWeight:'bold'
     }
 })

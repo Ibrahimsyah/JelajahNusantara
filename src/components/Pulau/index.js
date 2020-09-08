@@ -5,13 +5,20 @@ import styles from './styles'
 const badgeIcon = require('../../assets/icons/badge.png')
 
 export default (props) => {
-    const { nama, gambar, harga, onPress } = props
+    const { nama, gambar, harga, onPress, disabled } = props
+
+    const handlePress = () => {
+        if (disabled) {
+            return
+        }
+        onPress()
+    }
     return (
         <View style={styles.card}>
             <View style={{ flex: 0.4, justifyContent: 'space-around', padding: 16 }}>
                 <Text style={styles.title}>{nama}</Text>
-                <TouchableOpacity style={styles.btnLanjut} onPress={onPress}>
-                    <Text numberOfLines={1} adjustsFontSizeToFit> Mulai Petualangan</Text>
+                <TouchableOpacity style={styles.btnLanjut} onPress={handlePress}>
+                    <Text numberOfLines={1} adjustsFontSizeToFit style={!disabled ? styles.text : styles.textDisabled}> Mulai Petualangan</Text>
                 </TouchableOpacity>
             </View>
             <View style={{ flex: 0.6, justifyContent: "center", alignItems: "center" }}>
