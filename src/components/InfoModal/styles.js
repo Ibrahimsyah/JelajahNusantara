@@ -1,8 +1,7 @@
-import { StyleSheet, StatusBar } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     wrapper: {
-        marginTop: StatusBar.currentHeight * -1,
         zIndex: 99,
         flex: 1,
         justifyContent: "center",
@@ -19,6 +18,7 @@ export default StyleSheet.create({
     },
     title: {
         fontSize: 20,
+        textAlign: 'center',
         fontWeight: 'bold'
     },
     subtitle: {

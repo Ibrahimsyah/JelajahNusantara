@@ -23,7 +23,7 @@ export default ({ navigation, route }) => {
 
     const onMulaiBaca = () => {
         if (!loading) {
-            navigation.navigate('ruang-baca', {
+            navigation.replace('ruang-baca', {
                 story: storyData.steps,
                 quiz: storyData.quiz
             })

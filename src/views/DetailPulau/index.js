@@ -9,8 +9,6 @@ import api from '../../providers/api'
 import styles from './styles'
 import config from './index.config'
 
-const thumbnailCeritaRakyat = require('../../assets/ceryat/ceryat1.png')
-
 export default ({ route, navigation }) => {
     const { idPulau } = route.params
     const [pulau, _] = useState(config.pulau.find(p => p.id === idPulau))

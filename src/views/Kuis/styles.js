@@ -40,11 +40,13 @@ export default StyleSheet.create({
     },
     iconAnswer: {
         width: 40,
-        height: 40
+        height: 40,
+        flex: 2
     },
     answer: {
         marginLeft: 16,
         fontWeight: 'bold',
         fontSize: 18,
+        flex: 8
     }
 })
