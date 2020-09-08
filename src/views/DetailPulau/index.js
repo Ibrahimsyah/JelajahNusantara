@@ -18,10 +18,14 @@ export default ({ route, navigation }) => {
 
     const fetchDetailPulau = async (id) => {
         const res = await api.request(`home/detail/${id}`, 'get')
-        console.log(res)
         return res
     }
 
+    const onStoryClick = (id) => {
+        navigation.navigate('aturan-main', {
+            storyId: id
+        })
+    }
     useEffect(() => {
         Promise.all([fetchDetailPulau(idPulau)]).then(res => {
             const { detail: { trivias }, stories } = res[0]
@@ -39,11 +43,11 @@ export default ({ route, navigation }) => {
                 <HeadingText color="#F9941D">KOLEKSI CERITA RAKYAT</HeadingText>
                 {stories.map((story, idx) => (
                     <CeritaRakyatCard
-                        key={idx}
+                        key={story._id}
                         thumbnail={story.imgSrc}
                         title={story.title}
                         description={story.description}
-                        onPress={() => navigation.navigate('aturan-main')} />
+                        onPress={() => onStoryClick(story._id)} />
                 ))}
             </MainBackground>
             <FABSearch onPress={() => console.log('masuk')} />

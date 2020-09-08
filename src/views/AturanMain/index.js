@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Image, TouchableOpacity, Text, View } from 'react-native'
 import MainBackground from '../../components/MainBackground'
 import TopNavigation from '../../components/TopNavigation'
 import styles from './styles'
+
+import api from '../../providers/api'
 
 const owlBook = require('../../assets/images/owlBook.png')
 
@@ -14,9 +16,32 @@ const NumberedList = ({ number, children }) => {
         </View>
     )
 }
-export default ({ navigation }) => {
-    const onMulaiBaca = () => navigation.navigate('ruang-baca')
-    
+export default ({ navigation, route }) => {
+    const [loading, setLoading] = useState(true)
+    const [storyData, setStory] = useState(null)
+    const { storyId } = route.params
+
+    const onMulaiBaca = () => {
+        if (!loading) {
+            navigation.navigate('ruang-baca', {
+                story: storyData.steps,
+                quiz: storyData.quiz
+            })
+        }
+    }
+
+    const fetchStory = async () => {
+        const res = await api.request(`story/${storyId}`, 'get')
+        return res
+    }
+
+
+    useEffect(() => {
+        fetchStory().then(res => {
+            setStory(res)
+            setLoading(false)
+        })
+    })
     return (
         <>
             <TopNavigation navigation={navigation} />
@@ -30,7 +55,7 @@ export default ({ navigation }) => {
                 <NumberedList number="3">Dapatkan bintang dengan menjawab setiap kuis yang diberikan</NumberedList>
                 <NumberedList number="4">Selalu ingat jangan membaca dalam kegelapan</NumberedList>
                 <TouchableOpacity style={styles.btnAction} onPress={onMulaiBaca}>
-                    <Text style={styles.btnText}>Mulai Membaca</Text>
+                    <Text style={styles.btnText}>{loading ? 'Memuat Cerita...' : 'Mulai Membaca'}</Text>
                 </TouchableOpacity>
             </MainBackground>
         </>

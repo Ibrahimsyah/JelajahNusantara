@@ -11,7 +11,7 @@ export default ({ navigation }) => {
     const dispatch = useDispatch()
 
     const init = async () => {
-        await account.deleteAccount()
+        // await account.deleteAccount()
         Promise.all([account.getAccount(), savegame.getProgress()]).then(res => {
             const [account, progress] = res
             if (account) {
@@ -28,8 +28,9 @@ export default ({ navigation }) => {
     }, [])
     return (
         <View style={styles.container}>
-            <Text>Splash Screen</Text>
-            <ActivityIndicator size="small" color="#0000ff" />
+            <Text style={styles.title}>Jelajah</Text>
+            <Text style={styles.title}>Nusantara</Text>
+            <ActivityIndicator size="small" color="#fff" />
         </View>
     )
 }

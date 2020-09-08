@@ -40,7 +40,7 @@ export default (props) => {
                     </View>
                 </View>
                 <View style={{ height: '50%' }}>
-                    <Image source={image} style={styles.storyImage} />
+                    <Image source={{uri: image}} style={styles.storyImage} />
                 </View>
             </View>
         </View>

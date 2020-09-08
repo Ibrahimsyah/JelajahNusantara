@@ -8,7 +8,10 @@ import BacaanFragment from './BacaanFragment'
 
 const imageCerita = require('../../assets/backgrounds/ImageCerita.png')
 
-export default ({ navigation }) => {
+export default ({ navigation, route }) => {
+    const { story, quiz } = route.params
+    console.log(story.length)
+    console.log(quiz.length)
     let _carousel = useRef(null)
 
     const onBack = () => _carousel._animatePreviousPage()
@@ -18,9 +21,13 @@ export default ({ navigation }) => {
             <TopNavigation navigation={navigation} useBackArrow={false} />
             <View>
                 <Carousel ref={el => _carousel = el} {...config.carousel}>
-                    <BacaanFragment onNext={onNext} onBack={onBack} page={1} content="test 0" image={imageCerita} hideBackButton/>
-                    <BacaanFragment onNext={onNext} onBack={onBack} page={2} content="test 1" image={imageCerita} />
-                    <BacaanFragment onNext={onNext} onBack={onBack} page={3} content="test 2" image={imageCerita} hideNextButton/>
+                    {story.map((s, idx) => {
+                        if (idx == 0) {
+                            return <BacaanFragment key={s._id} onNext={onNext} onBack={onBack} page={idx + 1} content={s.content} image={s.imgSrc} hideBackButton />
+                        } else {
+                            return <BacaanFragment key={s._id} onNext={onNext} onBack={onBack} page={idx + 1} content={s.content} image={s.imgSrc}/>
+                        }
+                    })}
                 </Carousel>
             </View>
         </>
