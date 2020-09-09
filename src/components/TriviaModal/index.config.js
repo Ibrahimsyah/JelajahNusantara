@@ -1,3 +1,6 @@
+import { Dimensions } from 'react-native'
+const { width, height } = Dimensions.get('window');
+
 const owlBenar = require('../../assets/images/owl_benar.png')
 const owlSalah = require('../../assets/images/owl_salah.png')
 const owlSelesai = require('../../assets/images/owl_selesai.png')
@@ -5,6 +8,12 @@ const owlHitung = require('../../assets/images/owlHitung.png')
 const owlBeli = require('../../assets/images/owlBeli.png')
 
 export default {
+    carousel: {
+        style: { width: width * 0.6, height: '100%', flex: 8 },
+        autoplay: false,
+        isLooped: true,
+        swipe: false
+    },
     profile: {
         selesai: {
             color: '#03AA6F',

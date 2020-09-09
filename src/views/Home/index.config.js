@@ -21,25 +21,25 @@ export default {
         {
             id: 4,
             nama: 'Kepulauan Nusa Tenggara',
-            harga: 7500,
+            harga: 1000,
             gambar: require('../../assets/pulau/ntt.png')
         },
         {
             id: 3,
             nama: 'Pulau Bali',
-            harga: 1000,
+            harga: 2500,
             gambar: require('../../assets/pulau/bali.png')
         },
         {
             id: 6,
             nama: 'Pulau Sulawesi',
-            harga: 2500,
+            harga: 4000,
             gambar: require('../../assets/pulau/sulawesi.png')
         },
         {
             id: 7,
             nama: 'Pulau Papua',
-            harga: 4000,
+            harga: 7500,
             gambar: require('../../assets/pulau/papua.png')
         },
     ]

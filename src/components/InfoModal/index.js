@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal, View, Text, Image, TouchableOpacity } from 'react-native'
+import Carousel from 'react-native-looped-carousel'
 import config from './index.config'
 import styles from './styles'
 
